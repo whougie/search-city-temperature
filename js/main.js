@@ -1,15 +1,3 @@
-// Current weather
-// https://api.openweathermap.org/data/2.5/weather?q=blaine&units=imperial&appid=04c3d6aa3973c03986c260e63f679d61
-
-// 5 - day forecast
-// https://api.openweathermap.org/data/2.5/forecast?q=blaine&units=imperial&appid=04c3d6aa3973c03986c260e63f679d61
-
-// Take at 3 pm 
-// weather.main
-// main.temp
-// wind.speed
-// main.humidity
-
 let searchCityHistory = JSON.parse(localStorage.getItem("searchCityHistory"));
 
 /////////
@@ -176,8 +164,14 @@ function generateSearchCityHistory(city) {
   if (searchCityHistory) {
     if (!searchCityHistory.includes(city)) {
       const upperFirstLetterForCity = city.charAt(0).toUpperCase() + city.substr(1);
-      searchCityHistory.push(upperFirstLetterForCity); 
-      localStorage.setItem("searchCityHistory", JSON.stringify(searchCityHistory));
+      
+      if (searchCityHistory.length < 6) {
+        searchCityHistory.push(upperFirstLetterForCity); 
+        localStorage.setItem("searchCityHistory", JSON.stringify(searchCityHistory));
+      } else {
+        searchCityHistory.shift();
+        searchCityHistory.push(city);
+      }
     }
   } else {
     searchCityHistory = [city]
