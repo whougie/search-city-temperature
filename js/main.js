@@ -178,8 +178,6 @@ function generateSearchCityHistory(city) {
     searchCityHistory = [city]
     localStorage.setItem("searchCityHistory", JSON.stringify(searchCityHistory));
   }
-  console.log(city);
-  console.log(searchCityHistory);
 }
 
 
