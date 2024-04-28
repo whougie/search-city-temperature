@@ -171,6 +171,7 @@ function generateSearchCityHistory(city) {
       } else {
         searchCityHistory.shift();
         searchCityHistory.push(city);
+        localStorage.setItem("searchCityHistory", JSON.stringify(searchCityHistory));
       }
     }
   } else {
