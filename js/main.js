@@ -190,8 +190,10 @@ function generateSearchButtons() {
   
   searchHistoryElement.empty();
   
-  searchCityHistory.forEach(city => {
-    const cityButton = $(`<button class="cityHistoryButton col-11 mb-2 mt-2" data-city="${city}">${city}</button>`);
-    searchHistoryElement.append(cityButton);
-  });
+  if (searchCityHistory) {
+    searchCityHistory.forEach(city => {
+      const cityButton = $(`<button class="cityHistoryButton col-11 mb-2 mt-2" data-city="${city}">${city}</button>`);
+      searchHistoryElement.append(cityButton);
+    });
+  }
 }
