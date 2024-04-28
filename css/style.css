@@ -1,0 +1,16 @@
+h1 {
+  background-color: rgb(248, 237, 217);
+}
+
+.searchButton {
+  background-color: rgb(146, 240, 146);
+  border-radius: 8px;
+}
+
+.days {
+  background-color: rgb(160, 160, 214);
+}
+
+.cityHistoryButton {
+  background-color: rgb(219, 193, 243);
+}
